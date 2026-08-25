@@ -1,0 +1,102 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"on-error":"#ffffff","surface-tint":"#3f6653","surface-variant":"#e1e3e4","tertiary":"#002842","on-tertiary":"#ffffff","surface-container-high":"#e7e8e9","tertiary-fixed-dim":"#94ccff","background":"#f8f9fa","surface-dim":"#d9dadb","primary-fixed-dim":"#a5d0b9","error":"#ba1a1a","on-primary-fixed":"#002114","on-secondary-fixed":"#2e150b","on-surface":"#191c1d","on-secondary-fixed-variant":"#603f33","inverse-primary":"#a5d0b9","surface-container-low":"#f3f4f5","on-primary":"#ffffff","primary-fixed":"#c1ecd4","on-primary-fixed-variant":"#274e3d","surface":"#f8f9fa","on-background":"#191c1d","surface-bright":"#f8f9fa","secondary-fixed":"#ffdbcf","on-secondary":"#ffffff","on-tertiary-container":"#59adef","on-primary-container":"#86af99","primary":"#012d1d","tertiary-container":"#003f63","inverse-on-surface":"#f0f1f2","on-tertiary-fixed":"#001d32","surface-container-lowest":"#ffffff","secondary-fixed-dim":"#ebbcac","on-surface-variant":"#414844","error-container":"#ffdad6","on-secondary-container":"#795548","tertiary-fixed":"#cde5ff","on-error-container":"#93000a","secondary-container":"#fdcdbc","outline-variant":"#c1c8c2","on-tertiary-fixed-variant":"#004b74","secondary":"#7a5649","inverse-surface":"#2e3132","primary-container":"#1b4332","outline":"#717973","surface-container":"#edeeef","surface-container-highest":"#e1e3e4"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"md":"24px","gutter":"24px","base":"4px","margin-desktop":"48px","sm":"16px","xl":"64px","xs":"8px","lg":"40px","margin-mobile":"16px"},"fontFamily":{"headline-lg":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"headline-xl":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface"><main class="relative bg-background min-h-screen"><div class="flex flex-col w-full h-full justify-center items-center px-margin-mobile md:px-margin-desktop relative overflow-hidden py-xl">
+<!-- Background Decoration -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20" style="background-image: radial-gradient(circle at 100% 0%, var(--tw-colors-primary-fixed-dim) 0%, transparent 40%), radial-gradient(circle at 0% 100%, var(--tw-colors-tertiary-fixed-dim) 0%, transparent 40%);"></div>
+<div class="w-full max-w-2xl relative z-10">
+<!-- Progress Header -->
+<div class="mb-xl text-center">
+<div class="inline-flex items-center gap-xs mb-sm bg-surface-container rounded-full px-sm py-xs">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="ml-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Step 4 of 5</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-xs">Tell us about your crops</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Helping us understand what you grow allows AgriIntel to tailor insights and alerts specifically for your fields.</p>
+</div>
+<!-- Main Form Container -->
+<div class="bg-surface shadow-xl rounded-[24px] p-lg relative overflow-visible">
+<!-- Decorative leaf edge -->
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-primary-container rounded-full shadow-lg flex items-center justify-center transform rotate-12 transition-transform hover:rotate-45 duration-500">
+<span class="material-symbols-outlined text-on-primary-container" style="font-size: 48px; font-variation-settings: 'FILL' 1;">psychiatry</span>
+</div>
+<form class="space-y-xl">
+<!-- Current Crops (Tags Input Simulation) -->
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface">Current Crop(s)</label>
+<p class="font-label-sm text-label-sm text-on-surface-variant -mt-2">Type and press enter or comma to add.</p>
+<div class="min-h-[56px] bg-surface-container-low rounded-xl p-xs flex flex-wrap gap-xs items-center focus-within:ring-2 focus-within:ring-primary transition-shadow cursor-text" id="crop-tags-container">
+<!-- Pre-filled tags for visual richness -->
+<span class="inline-flex items-center gap-xs bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-sm text-label-sm">
+                            Winter Wheat
+                            <button aria-label="Remove Winter Wheat" class="hover:text-error transition-colors" type="button"><span class="material-symbols-outlined" style="font-size: 16px;">close</span></button>
+</span>
+<span class="inline-flex items-center gap-xs bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-sm text-label-sm">
+                            Soybeans
+                            <button aria-label="Remove Soybeans" class="hover:text-error transition-colors" type="button"><span class="material-symbols-outlined" style="font-size: 16px;">close</span></button>
+</span>
+<input class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-body-md text-body-md text-on-surface min-w-[120px] py-xs px-sm placeholder:text-on-surface-variant/50" placeholder="Add crop..." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Crop Season -->
+<div class="space-y-sm relative group">
+<label class="block font-label-md text-label-md text-on-surface">Crop Season</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low rounded-xl px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-shadow pr-10 cursor-pointer">
+<option disabled="" selected="" value="">Select Season</option>
+<option value="spring">Spring / Summer (Kharif)</option>
+<option value="autumn">Autumn / Winter (Rabi)</option>
+<option value="year-round">Year-round / Perennial</option>
+<option value="custom">Custom Rotation</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+<!-- Sowing Date -->
+<div class="space-y-sm relative group">
+<label class="block font-label-md text-label-md text-on-surface">Approximate Sowing Date</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low rounded-xl px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-shadow cursor-pointer [color-scheme:light]" type="date"/>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary transition-colors">calendar_month</span>
+</div>
+</div>
+</div>
+<!-- Previous Crops (Optional) -->
+<div class="space-y-sm p-md bg-surface-container-lowest rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-fixed"></div>
+<label class="block font-label-md text-label-md text-on-surface">Previous Crops <span class="font-label-sm text-on-surface-variant font-normal">(Optional, helps with soil health analysis)</span></label>
+<textarea class="w-full bg-surface-container-low rounded-xl px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary resize-none transition-shadow placeholder:text-on-surface-variant/50" placeholder="e.g., Corn (harvested Oct 2023)" rows="2"></textarea>
+</div>
+<!-- Actions -->
+<div class="pt-lg flex items-center justify-between border-t border-surface-variant">
+<button class="group flex items-center gap-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors px-sm py-xs" type="button">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        Back
+                    </button>
+<button class="relative overflow-hidden bg-primary text-on-primary font-label-md text-label-md px-xl py-sm rounded-xl shadow-md hover:shadow-lg transition-all group flex items-center gap-sm" type="button">
+<span class="relative z-10">Continue to Final Step</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+    // Simple script to focus input when clicking anywhere in the tags container
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('crop-tags-container');
+        const input = container.querySelector('input');
+        
+        container.addEventListener('click', (e) => {
+            if (e.target === container) {
+                input.focus();
+            }
+        });
+    });
+</script></main></body></html>

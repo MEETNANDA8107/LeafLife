@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "TC001",
+    "title": "New user creates an account and reaches the dashboard",
+    "description": "This verifies that a new farmer can complete signup with required personal and farm details and arrive on the dashboard.",
+    "category": "User Signup",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a new user name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a new email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the mobile number field with a valid mobile number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Select crop preferences"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the farm details fields with valid information"
+      },
+      {
+        "type": "action",
+        "description": "Submit the signup form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the account creation success state is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Create a new farmer account and reach the dashboard",
+    "description": "This verifies a first-time farmer can sign up with profile details and land on the protected dashboard.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a new farmer name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with a unique valid contact value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the crop preferences field with at least one crop"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the farm details field with valid farm information"
+      },
+      {
+        "type": "action",
+        "description": "Submit the signup form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed in"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Log in successfully and access the protected dashboard",
+    "description": "This verifies a returning farmer can authenticate and reach the main app after login.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed in"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Returning user logs in and reaches the dashboard",
+    "description": "This verifies that an existing farmer can sign in with valid credentials and enter the protected dashboard.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is authenticated"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Reject invalid login credentials",
+    "description": "This verifies the login form prevents access when the farmer enters incorrect credentials.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with an invalid account value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with an invalid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a login validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is not displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Log out from settings",
+    "description": "A logged-in farmer can end the session from settings and return to the login screen.",
+    "category": "Settings",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /settings"
+      },
+      {
+        "type": "action",
+        "description": "Log out of the application"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login screen is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Returning user sees an error for invalid login",
+    "description": "This verifies that invalid credentials are rejected and the user remains on the login screen with an error message.",
+    "category": "User Login",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with a fake credential"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a fake password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a login error message is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard is not displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Log out and return to the login page",
+    "description": "This verifies a signed-in farmer can end the session and is returned to the login screen.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the account or settings menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the logout action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed out"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Authenticated user logs out and returns to login",
+    "description": "This verifies that a logged-in farmer can log out successfully and is returned to the login screen.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the account or menu options"
+      },
+      {
+        "type": "action",
+        "description": "Click the logout action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed out"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Preserve access to protected pages after login",
+    "description": "This verifies a signed-in farmer can navigate from the dashboard to weather, irrigation, and market tools without being blocked.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view weather tools"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view irrigation tools"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view market tools"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the market intelligence page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify protected navigation remains available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Farmer asks the chatbot for guidance and receives advice",
+    "description": "This verifies that a logged-in farmer can open the in-app chatbot from the dashboard, submit a question, and see a response.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Type a farming question into the chatbot input"
+      },
+      {
+        "type": "action",
+        "description": "Send the chatbot message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chatbot response is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversation contains the submitted question"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Ask the chatbot a farming question and receive advice",
+    "description": "This verifies a farmer can submit a question in the chatbot and see a guidance response.",
+    "category": "Dashboard and chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot panel from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the chatbot input with a farming question"
+      },
+      {
+        "type": "action",
+        "description": "Send the chatbot message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a chatbot response is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify farming advice is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Review irrigation guidance and update irrigation settings",
+    "description": "This verifies a logged-in farmer can inspect irrigation recommendations, change settings, and see updated guidance.",
+    "category": "Smart Irrigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view irrigation tools"
+      },
+      {
+        "type": "action",
+        "description": "Review the irrigation schedule"
+      },
+      {
+        "type": "action",
+        "description": "Update the irrigation settings"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify irrigation guidance is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated irrigation recommendations are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Authenticated user opens weather insights from the dashboard",
+    "description": "This verifies that a logged-in farmer can move from the dashboard to the weather page and see crop suitability information.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link to the weather page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the weather insights page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify crop suitability information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Review dashboard recommendations and open the farming chatbot",
+    "description": "This verifies a logged-in farmer can see dashboard guidance and open the in-app chatbot from the main screen.",
+    "category": "Dashboard and chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "View the dashboard recommendations"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot panel from the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard recommendations are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chatbot is open"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "View weather forecasts and crop suitability recommendations",
+    "description": "This verifies a logged-in farmer can review weather information, browse the forecast, and see crop suitability guidance.",
+    "category": "Weather and Crops",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view weather tools"
+      },
+      {
+        "type": "action",
+        "description": "Browse the weather forecast"
+      },
+      {
+        "type": "action",
+        "description": "Review crop suitability recommendations"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify weather data is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify crop suitability recommendations are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Open chatbot from the dashboard",
+    "description": "A logged-in farmer can open the in-app assistant from the dashboard.",
+    "category": "AI Chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chat interface is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Authenticated user opens irrigation guidance from the dashboard",
+    "description": "This verifies that a logged-in farmer can move from the dashboard to irrigation guidance and see watering recommendations.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link to the irrigation page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the irrigation guidance page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify water usage recommendations are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Get farming advice from the chatbot",
+    "description": "A logged-in farmer can ask a farming question in chat and receive a response.",
+    "category": "AI Chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot"
+      },
+      {
+        "type": "action",
+        "description": "Type a farming question into the message field"
+      },
+      {
+        "type": "action",
+        "description": "Send the message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an AI-generated response is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Authenticated user opens market intelligence from the dashboard",
+    "description": "This verifies that a logged-in farmer can move from the dashboard to the market page and see market intelligence content.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link to the market page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the market intelligence page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify market pricing or demand information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Review market intelligence data",
+    "description": "This verifies a logged-in farmer can open market tools and inspect price, demand, and trade insights.",
+    "category": "Market Intelligence",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view market tools"
+      },
+      {
+        "type": "action",
+        "description": "View commodity price predictions"
+      },
+      {
+        "type": "action",
+        "description": "Browse demand analysis"
+      },
+      {
+        "type": "action",
+        "description": "Review import/export trade data"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify market price predictions are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify trade analysis data is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "See dashboard recommendations before asking for help",
+    "description": "A logged-in farmer can review dashboard recommendations and then open the chatbot from the main dashboard.",
+    "category": "AI Chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard recommendations are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chat interface is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Farmer updates farm details and crop preferences in settings",
+    "description": "This verifies that a logged-in farmer can edit profile information in settings and see the saved updates reflected in the app.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile number field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the settings navigation link"
+      },
+      {
+        "type": "action",
+        "description": "Update the farm details fields with new valid information"
+      },
+      {
+        "type": "action",
+        "description": "Update the crop preferences"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated farm settings are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the saved preferences are reflected in the account state"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "Update farm details and crop preferences in settings",
+    "description": "This verifies a logged-in farmer can edit profile information, save changes, and see the updated account state.",
+    "category": "Profile and preference management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to settings"
+      },
+      {
+        "type": "action",
+        "description": "Update the farm details"
+      },
+      {
+        "type": "action",
+        "description": "Update the crop preferences"
+      },
+      {
+        "type": "action",
+        "description": "Save the changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated profile information is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the changes are saved"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC025",
+    "title": "New user sees validation when signup details are incomplete",
+    "description": "This verifies that missing required signup information prevents account creation and surfaces validation feedback.",
+    "category": "User Signup",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a new user name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a new email address"
+      },
+      {
+        "type": "action",
+        "description": "Submit the signup form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify signup validation errors are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the account is not created"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC026",
+    "title": "Show validation when required signup details are missing",
+    "description": "This verifies the signup form blocks account creation when required farmer details are incomplete.",
+    "category": "Authentication and access control",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a new farmer name"
+      },
+      {
+        "type": "action",
+        "description": "Leave the email or mobile field empty"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Leave the crop preferences field empty"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the farm details field with valid farm information"
+      },
+      {
+        "type": "action",
+        "description": "Submit the signup form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify signup validation errors are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the account is not created"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC027",
+    "title": "Prevent sending an empty chatbot message",
+    "description": "This verifies the chatbot does not submit blank questions and keeps the user on the input state.",
+    "category": "Dashboard and chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot panel from the dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Send an empty chatbot message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chatbot remains ready for input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no new chatbot response is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC028",
+    "title": "Prevent empty chatbot messages",
+    "description": "A logged-in farmer cannot send an empty chat message and the composer remains ready for input.",
+    "category": "AI Chatbot",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email or mobile field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the chatbot"
+      },
+      {
+        "type": "action",
+        "description": "Send the message without typing anything"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no chat message is added"
+      }
+    ],
+    "priority": "Low"
+  }
+]
